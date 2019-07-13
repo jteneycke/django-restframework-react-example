@@ -1,3 +1,23 @@
+# What's this?
+
+A sample of how to structure a `django` app with `create-react-app` to get past the  [cthulhuian madness]([https://stackoverflow.com/a/1732454) of figuring out how to proxy CORs and CSRF in development, and the subtle "peculiarities" of `djangorestframework`.
+
+
+# Up and running
+
+One terminal for Django
+```
+./manage.py migrate
+./manage.py runserver
+```
+
+Another terminal for the frontend
+```
+cd frontend
+yarn
+yarn run start
+```
+
 # References
 
 Setting up combined app structure for development (CORS & CSRF)
