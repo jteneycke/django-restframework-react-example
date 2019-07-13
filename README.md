@@ -7,6 +7,7 @@ A sample of how to structure a `django` app with `create-react-app` to get past 
 
 One terminal for Django
 ```
+pip install -r requirements.txt
 ./manage.py migrate
 ./manage.py runserver
 ```
