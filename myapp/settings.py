@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsPostCsrfMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -137,3 +138,14 @@ CORS_ORIGIN_WHITELIST = [
 
 # TODO: See if we're better of handling CSRF stuff by whitelisting our hosts? (local & production)
 # https://github.com/ottoyiu/django-cors-headers#csrf-integration
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000"
+]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
