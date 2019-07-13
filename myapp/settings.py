@@ -133,3 +133,6 @@ STATICFILES_DIRS = [
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
+
+# TODO: See if we're better of handling CSRF stuff by whitelisting our hosts? (local & production)
+# https://github.com/ottoyiu/django-cors-headers#csrf-integration
