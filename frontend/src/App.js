@@ -7,11 +7,17 @@ import './App.css';
 function App() {
 
   const [state, setState] = useState()
+  const [users, setUsers] = useState([])
 
   useEffect(()=> {
     axios.get("/api/it/", {})
     .then((response) => {
       setState(response.data.it)
+    }).catch((e) => console.log("Error:", e))
+
+    axios.get("/api/users/", {})
+    .then((response) => {
+      setUsers(response.data)
     }).catch((e) => console.log("Error:", e))
   }, [])
 
@@ -25,6 +31,13 @@ function App() {
         <h1>
           It is {state}.
         </h1>
+        <ul>
+          {
+            users.map((user) => {
+              return <li key={user.id}>{user.username} - {user.email}</li>
+            })
+          }
+        </ul>
           
       </header>
     </div>
