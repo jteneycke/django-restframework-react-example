@@ -1,6 +1,6 @@
 # What's this?
 
-A sample of how to structure a `django` app with `create-react-app` to get past the  [cthulhuian madness]([https://stackoverflow.com/a/1732454) of figuring out how to proxy CORs and CSRF in development, and the subtle "peculiarities" of `djangorestframework`.
+A sample of how to structure a `django` app with `create-react-app` to get past the [cthulhuian madness](https://stackoverflow.com/a/1732454) of figuring out how to proxy CORs and CSRF in development, and the subtle "peculiarities" of `djangorestframework`.
 
 
 # Up and running
