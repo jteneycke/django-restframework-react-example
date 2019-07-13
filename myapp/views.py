@@ -33,11 +33,11 @@ class ApiView(View):
 
     def get(self, request):
         return JsonResponse({
-            "it": "works"
+            "it": "getting"
         })
 
     @csrf_exempt
     def post(self, request):
         return JsonResponse({
-            "it": "posts"
+            "it": "posting"
         })
