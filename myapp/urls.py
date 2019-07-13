@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
+from django.views.decorators.csrf import csrf_exempt
 from . import views
 
 urlpatterns = [
     # ... the rest of the urlpatterns ...
     # must be catch-all for pushState to work
     path('admin/', admin.site.urls),
-    path('api/it/', views.ApiView.as_view()),
+    path('api/it/', csrf_exempt(views.ApiView.as_view())),
     # Put the API and admin routes about so they don't get eaten by the matcher?
     url(r'^', views.FrontendAppView.as_view()),
 ]
