@@ -1,14 +1,27 @@
-## References
+# References
 
+Setting up combined app structure for development (CORS & CSRF)
+* https://www.fusionbox.com/blog/detail/create-react-app-and-django/624/
+* https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development
+* TODO: Deployment guide for Node + Django on Heroku
 
-https://www.fusionbox.com/blog/detail/create-react-app-and-django/624/
-https://hptechblogs.com/using-json-web-token-react/
+Using JWT and React Router
+* https://hptechblogs.com/using-json-web-token-react/
 
-https://tylermcginnis.com/react-router-pass-props-to-components/
-https://til.hashrocket.com/posts/z8cimdpghg-passing-props-down-to-react-router-route
-https://www.robinwieruch.de/react-list-components/
+Misc React Stuff
+* https://tylermcginnis.com/react-router-pass-props-to-components/
+* https://til.hashrocket.com/posts/z8cimdpghg-passing-props-down-to-react-router-route
+* https://www.robinwieruch.de/react-list-components/
+* https://reactjs.org/docs/hooks-reference.html#useref
 
-## Dependencies
+Misc Django Stuff
+* https://www.django-rest-framework.org/api-guide/serializers/#dealing-with-nested-objects
 
-https://github.com/django-extensions/django-extensions
-https://github.com/davesque/django-rest-framework-simplejwt
+# Dependencies
+
+Useful Dev Stuff (shell_plus, etc)
+* https://github.com/django-extensions/django-extensions
+* TODO: Find something that gives better logging for DRF 400's
+
+App specific deps
+* https://github.com/davesque/django-rest-framework-simplejwt
