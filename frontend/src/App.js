@@ -1,109 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import axios from 'axios';
 
-import useGlobal from './AppState';
+import Counters from './components/Counters';
+import Users from './components/Users';
+import Home from  './components/Home';
+import Login from  './components/Login';
 
 import './App.css';
 
-
-
-const Index = () => {
-  const [store, update] = useGlobal();
-
-  useEffect(()=> {
-    axios.get("/api/it/", {})
-    .then((response) => {
-      update.SET_VERB(response.data.it)
-    }).catch((e) => console.log("Error:", e))
-  }, [])
-
-  return (
-    <header className="App-header">
-      <h1>
-        It is {store.verb}.
-      </h1>
-    </header>
-  )
-}
-
-
-const Counters = () => {
-  const [store, update] = useGlobal();
-
-  return (
-    <>
-      <p>
-        counter:
-        {store.counter}
-      </p>
-      <button type="button" onClick={() => update.INCREMENT(1)}>
-        +1 to global
-      </button>
-      <button type="button" onClick={() => update.DECREMENT(1)}>
-        -1 to global
-      </button>
-      <button type="button" onClick={() => update.SET_USER("josh")}>
-        Set User
-      </button>
-    </>
-  )
-}
-
-
-const Users = () => {
-  const [store, update] = useGlobal();
-
-  const username = useRef(null)
-  const email = useRef(null)
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    axios.post("/api/users/", {
-      "username": username.current.value,
-      "email": email.current.value,
-      "groups": []
-    }).then((response) => {
-      console.log("Create user", response)
-    }).catch((e) => {
-      console.log("Error:", e)
-    })
-  }
-
-  useEffect(()=> {
-    axios.get("/api/users/", {})
-    .then((response) => {
-      update.SET_USERS(response.data)
-    }).catch((e) => {
-      console.log("Error:", e)
-    })
-  }, [])
-
-  return (
-    <>
-      <p>
-        user:
-        {store.user}
-      </p>
-      <ul>
-        {
-          store.users.map((user, index) => {
-            return <li key={index}>{user.username} - {user.email}</li>
-          })
-        }
-      </ul>
-
-      <form onSubmit={onSubmit}>
-        <input ref={username}></input>
-        <br/>
-        <input ref={email}></input>
-        <br/>
-        <button type='submit'>Create New User</button>
-      </form>
-    </>
-  )
-}
+import useGlobal from './AppState';
 
 const App = () => {
   const [store, update] = useGlobal();
@@ -122,12 +27,26 @@ const App = () => {
             <li>
               <Link to="/users/">Users</Link>
             </li>
+            <li>
+              <Link to="/login/">Login</Link>
+            </li>
           </ul>
+
+          <h1>
+            HTTP verb test is: "{store.verb}"
+          </h1>
+          <h1>
+            User is {store.user}.
+          </h1>
+          <h1>
+            Count is {store.counter}.
+          </h1>
         </nav>
 
-        <Route path="/" exact component={Index} />
+        <Route path="/" exact component={Home} />
         <Route path="/counters/" component={Counters} />
         <Route path="/users/" component={Users} />
+        <Route path="/login/" component={Login} />
       </Router>
     </>
   );
