@@ -26,8 +26,12 @@ Setting up combined app structure for development (CORS & CSRF)
 * https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development
 * TODO: Deployment guide for Node + Django on Heroku
 
+Global State Management (a simpler way to bypass passing props all over the place)
+* https://www.npmjs.com/package/use-global-hook
+
 Using JWT and React Router
 * https://hptechblogs.com/using-json-web-token-react/
+* https://reacttraining.com/react-router/web/example/auth-workflow
 
 More recent example using Context API
 * https://codesandbox.io/s/my206lnpv9    
