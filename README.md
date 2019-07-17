@@ -29,6 +29,9 @@ Setting up combined app structure for development (CORS & CSRF)
 Using JWT and React Router
 * https://hptechblogs.com/using-json-web-token-react/
 
+More recent example using Context API
+* https://codesandbox.io/s/my206lnpv9    
+
 Misc React Stuff
 * https://tylermcginnis.com/react-router-pass-props-to-components/
 * https://til.hashrocket.com/posts/z8cimdpghg-passing-props-down-to-react-router-route
@@ -42,6 +45,7 @@ Misc Django Stuff
 
 Useful Dev Stuff (shell_plus, etc)
 * https://github.com/django-extensions/django-extensions
+* https://github.com/Rhumbix/django-request-logging
 * TODO: Find something that gives better logging for DRF 400's
 
 App specific deps

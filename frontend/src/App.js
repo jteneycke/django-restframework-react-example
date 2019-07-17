@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-
 import './App.css';
 
 function App() {
 
   const [state, setState] = useState()
   const [users, setUsers] = useState([])
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState([])
 
   const username = useRef(null)
   const email = useRef(null)
@@ -43,22 +42,23 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
         <h1>
           It is {state}.
         </h1>
         <ul>
           {
-            users.map((user) => {
-              return <li key={user.id}>{user.username} - {user.email}</li>
+            users.map((user, index) => {
+              return <li key={index}>{user.username} - {user.email}</li>
             })
           }
         </ul>
+
         <form onSubmit={onSubmit}>
           {
             errors.map((key, value)=> {
-              return <li
+              return <li key={key}>{key} - {value}</li>
             })
           }
 
