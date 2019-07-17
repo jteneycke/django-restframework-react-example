@@ -1,21 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import useGlobalHook from 'use-global-hook';
 import axios from 'axios';
+
+import useGlobal from './AppState';
 
 import './App.css';
 
-import actions from './actions.js';
-
-const initialState = {
-  counter: 0,
-  user: null,
-  users: [],
-  verb: null
-};
-
-
-const useGlobal = useGlobalHook(React, initialState, actions);
 
 
 const Index = () => {
