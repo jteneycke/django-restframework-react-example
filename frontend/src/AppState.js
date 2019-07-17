@@ -2,6 +2,11 @@ import React from 'react';
 import useGlobalHook from 'use-global-hook';
 import axios from 'axios';
 
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
+
+
 const initialState = {
   counter: 0,
   user: null,
@@ -56,15 +61,18 @@ const actions = {
 
     axios.post("/api/users/", params)
     .then((response) => {
-      console.log("Create user", response)
+
+      store.setState({
+        user: response.data.username
+      });
+
+      //history.replace("/") // Changes route, but does not make corresoponding component show
+
+      //console.log("Create user", response)
     }).catch((e) => {
       console.log("Error:", e)
     })
 
-
-   // store.setState({
-   //   verb: verb
-   // });
   },
 };
 

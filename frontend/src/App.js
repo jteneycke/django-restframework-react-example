@@ -13,6 +13,9 @@ import useGlobal from './AppState';
 const App = () => {
   const [store, update] = useGlobal();
 
+  // TODO: Just straight up drop this implementation in and go from there
+  // https://reacttraining.com/react-router/web/example/auth-workflow
+
   return (
     <>
       <Router>

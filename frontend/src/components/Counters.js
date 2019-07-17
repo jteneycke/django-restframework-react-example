@@ -16,9 +16,8 @@ const Counters = () => {
       <button type="button" onClick={() => update.DECREMENT(1)}>
         -1 to global
       </button>
-      <button type="button" onClick={() => update.SET_USER("josh")}>
-        Set User
-      </button>
+      <h4>Live update state</h4>
+      <input type="text" onChange={(e) => update.SET_USER(e.target.value)}></input>
     </>
   )
 }
